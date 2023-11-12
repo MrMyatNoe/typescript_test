@@ -4,6 +4,7 @@
 
 - **Square** between **76 and 125**
 - **Square** by **5**
+- **Square** between **50 && 75**
 
 1. run tsc index.ts
 1. after that, run index.js
