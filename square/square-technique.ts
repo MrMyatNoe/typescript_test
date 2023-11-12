@@ -1,5 +1,16 @@
 const approximate: number = 100;
 const fill: string = "0";
+const five: number = 5;
+
+function square(input: number): string {
+  let result: string = "";
+  if (input % 10 === 5) {
+    result = squareByFive(input);
+  } else {
+    result = squareTechniqueOne(input);
+  }
+  return result;
+}
 
 function squareTechniqueOne(input: number): string {
   let squareTemp: number = 0;
@@ -14,7 +25,7 @@ function squareTechniqueOne(input: number): string {
     }
 
     const first: string = result.substring(0, 2);
-    if (result.length == 5) {
+    if (result.length === 5) {
       const last: string = result.substring(3, 5);
       const charNumber: string = result.charAt(2);
       const temp = Number(first) + Number(charNumber);
@@ -29,7 +40,7 @@ function squareTechniqueOne(input: number): string {
     result = `${plus}${calculate}`;
     const first: string = result.substring(0, 3);
 
-    if (result.length == 6) {
+    if (result.length === 6) {
       const last: string = result.substring(4, 6);
       const charNumber: string = result.charAt(3);
       const temp = Number(first) + Number(charNumber);
@@ -44,4 +55,12 @@ function squareTechniqueOne(input: number): string {
   return result;
 }
 
-export { squareTechniqueOne };
+function squareByFive(input: number): string {
+  let squareByFive: number = five * five;
+  let dividend: number = Math.floor(input / 10);
+  console.log("square by five ", dividend);
+  const first = dividend * ++dividend;
+  return `${first}${squareByFive}`;
+}
+
+export { square };

@@ -1,3 +1,3 @@
-import { squareTechniqueOne } from "./square/square-technique";
+import { square } from "./square/square-technique";
 
-console.log(squareTechniqueOne(110));
+console.log(square(105));
